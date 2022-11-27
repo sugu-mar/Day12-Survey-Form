@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-1 SurveyForm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+      body {
+        margin-left: 3%;
+        margin-top: 20px;
+        padding: 0;
+        width: 95%;
+      }
+
+      .star-wrapper {
+        position: relative;
+      }
+
+      .stars {
+        background-image: url("./stars_1.webp");
+        background-repeat: none;
+        width: 355px;
+        height: 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+
+      a {
+        text-decoration: none;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      .one-star:hover ~ .stars {
+        background-position: 0 -81px;
+      }
+
+      .two-stars:hover ~ .stars {
+        background-position: 0 -162px;
+      }
+
+      .three-stars:hover ~ .stars {
+        background-position: 0 -243px;
+      }
+
+      .four-stars:hover ~ .stars {
+        background-position: 0 -324px;
+      }
+
+      .five-stars:hover ~ .stars {
+        background-position: 0 -405px;
+      }
+
+      /* .cfname {
+        margin-right:5%;
+      } */
+
+      .email {
+        /* margin-top: 35px; */
+        margin-left: -15px;
+      }
+      #exampleInputEmail1 {
+        width: 92.5%;
+      }
+
+      #radioin {
+        margin-top: 30px;
+      }
+      td,
+      .tablehelp {
+        text-align: center;
+      }
+
+      td {
+        width: 17.4%;
+      }
+      .taheading {
+        width: 14%;
+      }
+
+      .table th {
+        border: none;
+      }
+      label {
+        font-weight: bold;
+      }
+
+      .tableone {
+        margin-bottom: 0px;
+      }
+      .CRBFCO,
+      .CRBFS,
+      .CRBFP,
+      .CRBFROCTO,
+      .CRBFROPTO,
+      .CRBFBFUA {
+        overflow: hidden;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+
+      .subbutton {
+        background-color: white;
+        color: black;
+      }
+
+      #CRBFROCTOid,
+      #CRBFROPTOid,
+      #CRBFBFUAid {
+        width: 14%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- cointainer opining -->
+    <div class="container">
+      <form method="get">
+        <!-- for each input present in form has indidual form group for separating each inpput tag-->
+        <div class="form-group">
+          <label class="namelable" for="fnamel">Name *</label>
+          <div class="form-row flname">
+            <div class="col-4 cfname">
+              <input
+                type="text"
+                id="fnamel"
+                class="form-control fname"
+                placeholder="First name"
+                aria-describedby="Firstname"
+                required
+              />
+              <small id="fnamehelper" class="form-text text-muted">
+                First
+              </small>
+            </div>
+
+            <div class="col-4 lname">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last name"
+                aria-describedby="Lastname"
+              />
+              <small id="lnamehelper" class="form-text text-muted">Last</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="from-group">
+          <div class="col-9 form-group email">
+            <label for="exampleInputEmail1">Email address *</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div id="ratingexp">
+            <label
+              id="expreiencelabel"
+              for="experience"
+              aria-describedby="Firstname"
+              >Your Experience *</label
+            >
+            <div class="star-wrapper">
+              <a href="#" class="one-star">&nbsp;</a>
+
+              <a href="#" class="two-stars">&nbsp;</a>
+              <a href="#" class="three-stars">&nbsp;</a>
+              <a href="#" class="four-stars">&nbsp;</a>
+              <a href="#" class="five-stars">&nbsp;</a>
+
+              <div class="stars">&nbsp;</div>
+              <small id="ratinghelper" class="form-text text-muted"
+                >Overall, how would you exprience with us?</small
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label id="radioin" for="table table-striped"
+              >How satisfied are you with *</label
+            >
+          </div>
+          <table class="table table-striped tableone">
+            <thead>
+              <div id="tahead">
+                <th></th>
+                <th>
+                  <small
+                    id="radiohelper2"
+                    class="form-text text-muted tablehelp"
+                    >Unsatisfied</small
+                  >
+                </th>
+                <th>
+                  <small
+                    id="radiohelper3"
+                    class="form-text text-muted tablehelp"
+                    >Neutral</small
+                  >
+                </th>
+                <th>
+                  <small
+                    id="radiohelper4"
+                    class="form-text text-muted tablehelp"
+                    >Satisfied</small
+                  >
+                </th>
+                <th>
+                  <small
+                    id="radiohelper5"
+                    class="form-text text-muted tablehelp"
+                    >Very Satisfied</small
+                  >
+                </th>
+                <th>
+                  <small
+                    id="radiohelper1"
+                    class="form-text text-muted tablehelp"
+                    >Very Unsatisfied</small
+                  >
+                </th>
+              </div>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row" class="taheading" id="RBFPid">Purchase</th>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="purchase"
+                    class="CRBFP"
+                    aria-label="RBFP"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="purchase"
+                    class="CRBFP"
+                    aria-label="RBFP"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="purchase"
+                    class="CRBFP"
+                    aria-label="RBFP"
+                    required
+                  />
+                  <!--! efgergergeerg, -->
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="purchase"
+                    class="CRBFP"
+                    aria-label="RBFP"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="purchase"
+                    class="CRBFP"
+                    aria-label="RBFP"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="taheading" id="RBFSid">Service</th>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="service"
+                    class="CRBFS"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="service"
+                    class="CRBFS"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="service"
+                    class="CRBFS"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="service"
+                    class="CRBFS"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="service"
+                    class="CRBFS"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="taheading" id="RBFCOid">
+                  Company Overall
+                </th>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="companyoverall"
+                    class="CRBFCO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="companyoverall"
+                    class="CRBFCO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="companyoverall"
+                    class="CRBFCO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="companyoverall"
+                    class="CRBFCO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="companyoverall"
+                    class="CRBFCO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="form-group">
+          <label id="radioin" for="table table-striped"
+            >How satisfied are you with *</label
+          >
+
+          <table class="table table-striped">
+            <thead>
+              <th></th>
+              <th>
+                <small id="radiohelper2" class="form-text text-muted tablehelp"
+                  >Very Unlikely</small
+                >
+              </th>
+              <th>
+                <small id="radiohelper3" class="form-text text-muted tablehelp"
+                  >Unlikely</small
+                >
+              </th>
+              <th>
+                <small id="radiohelper4" class="form-text text-muted tablehelp"
+                  >Neutral</small
+                >
+              </th>
+              <th>
+                <small id="radiohelper5" class="form-text text-muted tablehelp"
+                  >Likely</small
+                >
+              </th>
+              <th>
+                <small id="radiohelper1" class="form-text text-muted tablehelp"
+                  >Very Likely</small
+                >
+              </th>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="taheading" id="CRBFBFUAid">
+                  Buy from us again
+                </th>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="buy"
+                    class="CRBFBFUA"
+                    aria-label="RBFP"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="buy"
+                    class="CRBFBFUA"
+                    aria-label="RBFP"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="buy"
+                    class="CRBFBFUA"
+                    aria-label="RBFP"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="buy"
+                    class="CRBFBFUA"
+                    aria-label="RBFP"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="buy"
+                    class="CRBFBFUA"
+                    aria-label="RBFP"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="taheading" id="CRBFROPTOid">
+                  Recommend our product to others
+                </th>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommendproduct"
+                    class="CRBFROPTO"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommendproduct"
+                    class="CRBFROPTO"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommendproduct"
+                    class="CRBFROPTO"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommendproduct"
+                    class="CRBFROPTO"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommendproduct"
+                    class="CRBFROPTO"
+                    aria-label="RBFS"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="taheading" id="CRBFROCTOid">
+                  Recommend our company to others
+                </th>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommend"
+                    class="CRBFROCTO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommend"
+                    class="CRBFROCTO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommend"
+                    class="CRBFROCTO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommend"
+                    class="CRBFROCTO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+                <td style="vertical-align: middle">
+                  <input
+                    type="radio"
+                    name="recommend"
+                    class="CRBFROCTO"
+                    aria-label="RBFCO"
+                    required
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1"
+            >Additional Comments or suggestions</label
+          >
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <input
+            class="btn btn-primary subbutton"
+            type="submit"
+            value="Submit"
+          />
+        </div>
+      </form>
+      <!-- constainer closed -->
+    </div>
+  </body>
+</html>
